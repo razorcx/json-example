@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using Newtonsoft.Json;
@@ -8,7 +9,8 @@ namespace JsonExample
 {
 	public partial class JsonExampleForm : Form
 	{
-		private readonly string _path = $"d:\\RazorCX\\Development\\Customer.json";
+		private static string _localpath = Directory.GetCurrentDirectory(); // get current dir path
+		public string _path = Path.Combine(_localpath, "Customer.json"); // combine current dir path + file
 
 		public JsonExampleForm()
 		{
@@ -31,7 +33,7 @@ namespace JsonExample
 			}
 			catch (Exception ex)
 			{
-				// ignored
+				Trace.WriteLine("Exception Generated: " + ex);
 			}
 		}
 
@@ -50,7 +52,7 @@ namespace JsonExample
 			}
 			catch (Exception ex)
 			{
-				// ignored
+				Trace.WriteLine("Exception Generated: " + ex);
 			}
 		}
 
