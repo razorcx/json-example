@@ -9,8 +9,8 @@ namespace JsonExample
 {
 	public partial class JsonExampleForm : Form
 	{
-		private static string _localpath = Directory.GetCurrentDirectory();
-		public string _path = Path.Combine(_localpath, "Customer.json");
+		private static string _localpath = Directory.GetCurrentDirectory(); // get current dir path
+		public string _path = Path.Combine(_localpath, "Customer.json"); // combine current dir path + file
 
 		public JsonExampleForm()
 		{
